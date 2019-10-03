@@ -2245,7 +2245,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaba8cc4166761640bae5d953648fa2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 100
+  MaxHealth: 0
   health: 0
 --- !u!195 &1847409283371458745
 NavMeshAgent:
@@ -2283,9 +2283,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   goal: {fileID: 0}
-  agent: {fileID: 0}
+  agent: {fileID: 1847409283371458745}
   Timer: 0
-  seconds: 2
+  seconds: 0
   anim: {fileID: 0}
   extraRotationSpeed: 0
   playerHealth: {fileID: 0}
