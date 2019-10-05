@@ -71,11 +71,12 @@ public class navMeshUpdated : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "StopZone")
         {
             print("STOPP");
+            attack = true;
             stop = true;
         }
         if (other.gameObject.tag == "AttackZone")
