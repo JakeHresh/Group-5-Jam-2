@@ -4,10 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - Goal
-  - AttackZone
-  - StopZone
+  - Fire
   layers:
   - Default
   - TransparentFX
