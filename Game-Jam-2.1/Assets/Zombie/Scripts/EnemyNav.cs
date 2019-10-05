@@ -11,6 +11,16 @@ public class EnemyNav : MonoBehaviour
     private bool follow, stay;
     private void OnTriggerEnter(Collider other)
     {
+        //checks if player is looking
+        if (other.gameObject.tag == "Looking")
+        {
+            Debug.Log("looking");
+            stay = true;
+            agent.isStopped = true;
+            anim.SetBool("Idle", true);
+            anim.SetBool("IsWalking", false);
+            anim.SetBool("Attacking", false);
+        }
         //When enemy triggers goal, it stops and stays.
         Debug.Log("Enemy collided with: "+other.gameObject.tag);
         if(other.gameObject.tag == "Goal")
@@ -56,6 +66,16 @@ public class EnemyNav : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         //If player moves away from enemy after colliding, enemy follows
+        if(other.gameObject.tag == "Looking")
+        {
+            Debug.Log("not looking");
+            stay = false;
+            follow = true;
+            agent.isStopped = false;
+            anim.SetBool("Idle", false);
+            anim.SetBool("IsWalking", true);
+        }
+        
         if (other.gameObject.tag == "Player")
         {
             if (stay == false)

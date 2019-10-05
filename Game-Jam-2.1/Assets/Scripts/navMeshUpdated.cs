@@ -26,7 +26,7 @@ public class navMeshUpdated : MonoBehaviour
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.transform;
         playerHealth = playerObject.GetComponent<HealthSystem>();
-        goal = GameObject.FindGameObjectWithTag("Goal").transform;
+        goal = GameObject.FindGameObjectWithTag("Player").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 
@@ -73,6 +73,10 @@ public class navMeshUpdated : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        if (other.gameObject.tag == "Looking")
+        {
+            stop = true;
+        }
         if (other.gameObject.tag == "StopZone")
         {
             print("STOPP");
@@ -90,6 +94,10 @@ public class navMeshUpdated : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
+        if (other.gameObject.tag == "Looking")
+        {
+            stop = false;
+        }
         if (other.gameObject.tag == "StopZone")
         {
             stop = false;

@@ -16,7 +16,7 @@ public class Freeze : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards (transform.position, Player.transform.position * Speed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards (transform.position, Player.transform.position, Speed * Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider Coll)
