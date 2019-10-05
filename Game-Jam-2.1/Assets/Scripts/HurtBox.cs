@@ -5,22 +5,30 @@ using UnityEngine;
 public class HurtBox : MonoBehaviour
 {
     public HealthSystem playerHealth;
+    public float timer = 0f;
     public void Start()
     {
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<HealthSystem>();
         print("HUrted");
     }
 
-    // Start is called before the first frame update
-    void OnTriggerEnter(Collider other)
+    void Update()
     {
-        if (other.gameObject.tag == "AttackZone")
+        if(timer > 0)
+            timer--;
+    }
+
+    // Start is called before the first frame update
+    void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.tag == "AttackZone" && timer <= 0f)
         {
             if (playerHealth)
             {
                 print("Smack");
                 playerHealth.Damage(5f);
             }
+            timer += 180f;
         }
        
     }
