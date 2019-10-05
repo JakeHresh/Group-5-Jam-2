@@ -28,7 +28,7 @@ public class HurtBox : MonoBehaviour
                 print("Smack");
                 playerHealth.Damage(5f);
             }
-            timer += 180f;
+            timer += 120f;
         }
        
     }
