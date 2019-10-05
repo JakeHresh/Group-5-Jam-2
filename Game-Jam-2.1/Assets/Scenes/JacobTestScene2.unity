@@ -615,6 +615,7 @@ MonoBehaviour:
     type: 3}
   speed: 30
   firingLocation: {fileID: 1561162117}
+  shootBufferTrack: 30
 --- !u!1 &1447277887
 GameObject:
   m_ObjectHideFlags: 0
