@@ -5,6 +5,7 @@ using UnityEngine;
 public class HurtBox : MonoBehaviour
 {
     public HealthSystem playerHealth;
+    public HealthSystem enemyHealth;
     public float timer = 0f;
     public void Start()
     {
@@ -30,6 +31,15 @@ public class HurtBox : MonoBehaviour
             }
             timer += 120f;
         }
-       
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Enemy")
+        {
+            if(enemyHealth)
+            {
+                enemyHealth.Damage(1f);
+            }
+        }
     }
 }
