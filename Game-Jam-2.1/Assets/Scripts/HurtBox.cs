@@ -29,7 +29,7 @@ public class HurtBox : MonoBehaviour
                 print("Smack");
                 playerHealth.Damage(5f);
             }
-            timer += 120f;
+            timer += 30f;
         }
     }
     private void OnTriggerEnter(Collider other)

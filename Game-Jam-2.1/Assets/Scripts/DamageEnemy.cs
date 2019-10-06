@@ -5,7 +5,7 @@ using UnityEngine;
 public class DamageEnemy : MonoBehaviour
 {
     public HealthSystem enemyHealth;
-    public float timer = 0f;
+    public int time = 0;
     public void Start()
     {
         enemyHealth = GameObject.FindGameObjectWithTag("Enemy").GetComponent<HealthSystem>();
@@ -14,8 +14,8 @@ public class DamageEnemy : MonoBehaviour
 
     void Update()
     {
-        if (timer > 0)
-            timer--;
+        if (time > 0)
+            time--;
     }
 
     // Start is called before the first frame update
@@ -28,7 +28,7 @@ public class DamageEnemy : MonoBehaviour
                 print("Smack");
                 enemyHealth.Damage(5f);
             }
-            timer += 120f;
+            time += 120;
         }
     }
 }
