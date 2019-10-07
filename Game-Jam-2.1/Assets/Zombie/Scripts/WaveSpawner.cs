@@ -46,7 +46,7 @@ public class WaveSpawner : MonoBehaviour
             if(!EnemyIsAlive())
             {
                 //Begin new round
-                WaveCompleted();
+                //WaveCompleted();
             }
 
             else

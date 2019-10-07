@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneTransitions : MonoBehaviour
 {
     public GameObject player;
-    public float timer = 120f;
+    public int timer = 0;
+    public Text timeDisplay;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,14 +18,15 @@ public class SceneTransitions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer -= Time.deltaTime;
+        timeDisplay.text = "TIME SURVIVED: " + timer / 60;
+        timer++;
         if(player == null)
         {
             SceneManager.LoadScene("GameoverScene");
         }
-        else if(timer <= 0)
+        /*if(timer <= 0)
         {
             SceneManager.LoadScene("VictoryScene");
-        }
+        }*/
     }
 }

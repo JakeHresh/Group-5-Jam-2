@@ -17,7 +17,7 @@ public class SuperShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && shootBuffer <= 0)
+        if (Input.GetMouseButtonDown(0) && shootBuffer <= 0)
         {
             GameObject instantiatedSunProjectile = Instantiate(sunSuperProjectile, firingLocation.position, transform.rotation) as GameObject;
             Rigidbody instBulletRigidbody = instantiatedSunProjectile.GetComponent<Rigidbody>();
