@@ -6,6 +6,7 @@ public class HealthSystem : MonoBehaviour
 {
     public float MaxHealth, health;
     public GameObject self;
+    public WaveSpawner spawn;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,7 @@ public class HealthSystem : MonoBehaviour
         {
             Debug.Log(gameObject.name + " died");
             Destroy(self, 2f * Time.deltaTime);
+            spawn.enemyCount--;
         }
     }
 }

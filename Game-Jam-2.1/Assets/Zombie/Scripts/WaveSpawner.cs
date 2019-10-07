@@ -25,7 +25,9 @@ public class WaveSpawner : MonoBehaviour
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.COUNTING;
-    public EnemyManager manager;
+    //public EnemyManager manager;
+    public int enemyLimit = 35;
+    public int enemyCount = 0;
     void Start()
     {
         if (spawnPoints.Length == 0)
@@ -50,6 +52,7 @@ public class WaveSpawner : MonoBehaviour
             else
             {
                 waves[0].enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
+                waves[0].enemy.tag = "EnemyReference";
             }
         }
 
@@ -119,11 +122,14 @@ public class WaveSpawner : MonoBehaviour
 
     void SpawnEnemy(Transform _enemy)
     {
-        //Spawn Enemy
-        Debug.Log("Spawning Enemy: " + _enemy.name);
-        Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Transform newEnemy = Instantiate(_enemy, _sp.position, _sp.rotation);
-        newEnemy.gameObject.tag = "Enemy";
-        manager.enemyCount += 1;
+        if(enemyCount < enemyLimit)
+        {
+            //Spawn Enemy
+            Debug.Log("Spawning Enemy: " + _enemy.name);
+            Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
+            Transform newEnemy = Instantiate(_enemy, _sp.position, _sp.rotation);
+            newEnemy.gameObject.tag = "Enemy";
+            enemyCount += 1;
+        }
     }
 }

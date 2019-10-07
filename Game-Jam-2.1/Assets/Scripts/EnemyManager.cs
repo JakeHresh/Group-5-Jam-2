@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour
+/*public class EnemyManager : MonoBehaviour
 {
     public int enemyLimit = 35;
     public int enemyCount = 0;
@@ -21,4 +21,4 @@ public class EnemyManager : MonoBehaviour
             Destroy(GameObject.FindWithTag("Enemy"));
         }
     }
-}
+}*/
