@@ -14496,7 +14496,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyHealth: {fileID: 0}
-  timer: 0
 --- !u!1 &5989862345420320291
 GameObject:
   m_ObjectHideFlags: 0

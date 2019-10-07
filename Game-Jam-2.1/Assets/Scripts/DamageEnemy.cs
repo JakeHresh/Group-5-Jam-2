@@ -5,21 +5,16 @@ using UnityEngine;
 public class DamageEnemy : MonoBehaviour
 {
     public HealthSystem enemyHealth;
-    public int time = 0;
     public void Start()
     {
         enemyHealth = GameObject.FindGameObjectWithTag("Enemy").GetComponent<HealthSystem>();
         print("HUrted");
     }
 
-    void Update()
-    {
-        if (time > 0)
-            time--;
-    }
+    
 
     // Start is called before the first frame update
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Enemy")
         {
@@ -28,7 +23,6 @@ public class DamageEnemy : MonoBehaviour
                 print("Smack");
                 enemyHealth.Damage(5f);
             }
-            time += 120;
         }
     }
 }
