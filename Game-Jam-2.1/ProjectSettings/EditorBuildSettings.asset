@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TitleScene.unity
     guid: 6cdfc07edf4109540880bd00239e87f3
   - enabled: 1
+    path: Assets/Scenes/JacobTestScene2.unity
+    guid: af8003879031ebd49918df10b68d700b
+  - enabled: 1
     path: Assets/Scenes/GameoverScene.unity
     guid: 291e7f1b498cfbf40aac91f845248c81
   m_configObjects: {}
