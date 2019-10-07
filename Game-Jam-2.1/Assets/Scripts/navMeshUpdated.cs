@@ -122,7 +122,7 @@ public class navMeshUpdated : MonoBehaviour
         ///</summary>
         if (CountDown() <= 0f)
         {
-            agent.isStopped = true;
+
             agent.destination = pointToGo.position;
             agent.updatePosition = true;
             agent.updateRotation = true;

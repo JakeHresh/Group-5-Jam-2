@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Goal
   - EnemyReference
+  - Bullet
   layers:
   - Default
   - TransparentFX
