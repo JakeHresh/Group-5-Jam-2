@@ -22,6 +22,7 @@ public class DamageEnemy : MonoBehaviour
             {
                 print("Smack");
                 enemyHealth.Damage(5f);
+                Debug.Log("HIT THE ENEMY");
             }
         }
     }

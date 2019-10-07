@@ -25,6 +25,7 @@ public class WaveSpawner : MonoBehaviour
     private float searchCountdown = 1f;
 
     private SpawnState state = SpawnState.COUNTING;
+    public EnemyManager manager;
     void Start()
     {
         if (spawnPoints.Length == 0)
@@ -123,5 +124,6 @@ public class WaveSpawner : MonoBehaviour
         Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
         Transform newEnemy = Instantiate(_enemy, _sp.position, _sp.rotation);
         newEnemy.gameObject.tag = "Enemy";
+        manager.enemyCount += 1;
     }
 }

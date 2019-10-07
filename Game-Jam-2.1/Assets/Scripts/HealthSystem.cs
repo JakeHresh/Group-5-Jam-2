@@ -5,9 +5,11 @@ using UnityEngine;
 public class HealthSystem : MonoBehaviour
 {
     public float MaxHealth, health;
+    public GameObject self;
     // Start is called before the first frame update
     void Start()
     {
+        self = gameObject;
         if (gameObject.tag == "Player")
         {
             MaxHealth = 100;
@@ -38,7 +40,7 @@ public class HealthSystem : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log(gameObject.name + " died");
-            Destroy(gameObject, 2f * Time.deltaTime);
+            Destroy(self, 2f * Time.deltaTime);
         }
     }
 }

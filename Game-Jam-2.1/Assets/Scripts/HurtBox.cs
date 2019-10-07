@@ -32,7 +32,7 @@ public class HurtBox : MonoBehaviour
             timer += 30f;
         }
     }
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "Enemy")
         {
@@ -41,5 +41,5 @@ public class HurtBox : MonoBehaviour
                 enemyHealth.Damage(1f);
             }
         }
-    }
+    }*/
 }
