@@ -48,7 +48,7 @@ public class WaveSpawner : MonoBehaviour
 
             else
             {
-                return;
+                waves[0].enemy = GameObject.FindGameObjectWithTag("Enemy").transform;
             }
         }
 
@@ -121,6 +121,7 @@ public class WaveSpawner : MonoBehaviour
         //Spawn Enemy
         Debug.Log("Spawning Enemy: " + _enemy.name);
         Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        Instantiate(_enemy, _sp.position, _sp.rotation);
+        Transform newEnemy = Instantiate(_enemy, _sp.position, _sp.rotation);
+        newEnemy.gameObject.tag = "Enemy";
     }
 }
