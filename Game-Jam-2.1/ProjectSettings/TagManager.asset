@@ -8,6 +8,7 @@ TagManager:
   - StopZone
   - Enemy
   - Goal
+  - Looking
   layers:
   - Default
   - TransparentFX
