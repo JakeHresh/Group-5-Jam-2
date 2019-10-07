@@ -14364,6 +14364,7 @@ GameObject:
   - component: {fileID: 5989862345075106817}
   - component: {fileID: 5989862345075106829}
   - component: {fileID: 7342494049271204352}
+  - component: {fileID: 7740070807018353077}
   m_Layer: 0
   m_Name: SuperSunShot
   m_TagString: Untagged
@@ -14482,6 +14483,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projectile: {fileID: 5989862345075106818}
   timer: 5
+--- !u!114 &7740070807018353077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5989862345075106818}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bca6162ec6f8684d8e7d2436fe75b3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: {fileID: 0}
 --- !u!1 &5989862345420320291
 GameObject:
   m_ObjectHideFlags: 0

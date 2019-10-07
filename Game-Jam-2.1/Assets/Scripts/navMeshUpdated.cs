@@ -26,13 +26,13 @@ public class navMeshUpdated : MonoBehaviour
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         player = playerObject.transform;
         playerHealth = playerObject.GetComponent<HealthSystem>();
-        goal = GameObject.FindGameObjectWithTag("Goal").transform;
+        //goal = GameObject.FindGameObjectWithTag("Goal").transform;
         agent = GetComponent<NavMeshAgent>();
         anim = GetComponent<Animator>();
 
         Timer = seconds;
-        anim.SetBool("Idle", true);
-        anim.SetBool("IsWalking", false);
+        //anim.SetBool("Idle", true);
+        anim.SetBool("IsWalking", true);
     }
 
     // Update is called once per frame
@@ -71,11 +71,12 @@ public class navMeshUpdated : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "StopZone")
         {
             print("STOPP");
+            attack = true;
             stop = true;
         }
         if (other.gameObject.tag == "AttackZone")
@@ -93,11 +94,15 @@ public class navMeshUpdated : MonoBehaviour
         if (other.gameObject.tag == "StopZone")
         {
             stop = false;
+            anim.SetBool("IsWalking", true);
+            anim.SetBool("Idle", false);
         }
         if (other.gameObject.tag == "AttackZone")
         {
             attack = false;
             stop = false;
+            anim.SetBool("IsWalking", true);
+            anim.SetBool("Idle", false);
         }
     }
     void Attack()
@@ -146,11 +151,11 @@ public class navMeshUpdated : MonoBehaviour
             DeterminePath();
 
         }
-        else
+        /*else
         {
             anim.SetBool("Idle", true);
             anim.SetBool("IsWalking", false);
-        }
+        }*/
     }
     void extraRotation()
     {
